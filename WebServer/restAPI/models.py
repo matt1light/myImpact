@@ -11,7 +11,7 @@ class Service(models.Model):
 
 class Device(models.Model):
     name = models.TextField()
-    id = models.IntegerField()
+    deviceId = models.IntegerField()
     service = models.ForeignKey(Service, related_name = 'devices', on_delete=models.SET_NULL, null=True)
 
 class RawData(models.Model):
@@ -26,6 +26,6 @@ class Rate(models.Model):
     value = models.FloatField()
 
 class GoalRate(models.Model):
-    service = models.ForeignKey(Service, related_name = 'goal_rates', on_delete=models.)
+    service = models.ForeignKey(Service, related_name = 'goal_rates', on_delete=models.CASCADE)
     level = models.CharField(max_length=20, default = "average")
     value = models.FloatField()
