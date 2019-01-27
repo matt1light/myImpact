@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
   $("#trash").click(function(){
-    $.post("test", '{"deviceType": "trash", "boardId": "1A2B3C", "data": " /d/d 12.32 kg"}',
+    boardId = $("#trashId").val()
+    value = $("#trashValue").val()
+    $.post("test", '{"deviceType": "trash", "boardId": "' + boardId + '", "data": " /d/d ' + value + ' kg"}',
     function(data, status){
       console.log("data: " + data)
       console.log("typeof: " + typeof data)
@@ -9,7 +11,9 @@ $(document).ready(function(){
   });
 
   $("#water").click(function(){
-    $.post("test", '{"deviceType": "water", "boardId": "7C5A2C", "data": "  5.3400 L"}',
+    boardId = $("#waterId").val()
+    value = $("#waterValue").val()
+    $.post("test", '{"deviceType": "water", "boardId": "' + boardId + '", "data": "  ' + value + ' L"}',
     function(data, status){
       console.log("data: " + data)
       console.log("typeof: " + typeof data)
@@ -17,7 +21,9 @@ $(document).ready(function(){
   });
 
   $("#electricity").click(function(){
-    $.post("test", '{"deviceType": "electricity", "boardId": "8X2A3D", "data": {"value": 8.45657, "unit": "kWh"}}',
+    boardId = $("#electricityId").val()
+    value = $("#electricityValue").val()
+    $.post("test", '{"deviceType": "electricity", "boardId": "' + boardId + '", "data": {"value": ' + value + ', "unit": "kWh"}}',
     function(data, status){
       console.log("data: " + data)
       console.log("typeof: " + typeof data)
@@ -25,11 +31,13 @@ $(document).ready(function(){
   });
 
   $("#gas").click(function(){
-    $.post("test", '{"deviceType": "gas", "boardId": "8A6D5F", "value": 118.00045657, "unit": "MJ"}',
+    boardId = $("#gasId").val()
+    value = $("#gasValue").val()
+    $.post("test", '{"deviceType": "gas", "boardId": "' + boardId + '", "value": ' + value + ', "unit": "MJ"}',
     function(data, status){
       console.log("data: " + data)
       console.log("typeof: " + typeof data)
     });
   });
-  
+
 });
