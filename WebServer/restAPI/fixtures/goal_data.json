@@ -1,0 +1,137 @@
+[
+  {
+    "model": "restAPI.service",
+    "pk": 1,
+    "fields": {
+      "name": "trash",
+      "analyzer": null,
+      "description": "True"
+    }
+  },
+  {
+    "model": "restAPI.service",
+    "pk": 2,
+    "fields": {
+      "name": "water",
+      "analyzer": null,
+      "description": "True"
+    }
+  },
+  {
+    "model": "restAPI.service",
+    "pk": 3,
+    "fields": {
+      "name": "electricity",
+      "analyzer": null,
+      "description": "True"
+    }
+  },
+  {
+    "model": "restAPI.service",
+    "pk": 4,
+    "fields": {
+      "name": "gas",
+      "analyzer": null,
+      "description": "True"
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 1,
+    "fields": {
+      "name": "Average individual garbage consumption US",
+      "service": 1,
+      "level": 1,
+      "units": "kg/day",
+      "value": 1.31
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 2,
+    "fields": {
+      "name": "50% of average individual garbage consumption US",
+      "service": 1,
+      "level": 2,
+      "units": "kg/day",
+      "value": 0.65
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 3,
+    "fields": {
+      "name": "Average individual energy consumption Canada",
+      "service": 3,
+      "level": 1,
+      "units": "kWh/day",
+      "value": 12.98
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 4,
+    "fields": {
+      "name": "Average individual energy consumption United Kingdom",
+      "service": 3,
+      "level": 2,
+      "units": "kWh/day",
+      "value": 5.01
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 5,
+    "fields": {
+      "name": "Average individual energy consumption World",
+      "service": 3,
+      "level": 3,
+      "units": "kWh/day",
+      "value": 2.00
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 6,
+    "fields": {
+      "name": "Average daily water consumption US/Canada",
+      "service": 2,
+      "level": 1,
+      "units": "litres/day",
+      "value": 200
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 7,
+    "fields": {
+      "name": "50% Average daily water consumption US/Canada",
+      "service": 2,
+      "level": 2,
+      "units": "litres/day",
+      "value": 100
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 8,
+    "fields": {
+      "name": "Average gas consumption US/Canada",
+      "service": 4,
+      "level": 1,
+      "units": "Megajoules/day",
+      "value": 12.7
+    }
+  },
+  {
+    "model": "restAPI.goalrate",
+    "pk": 9,
+    "fields": {
+      "name": "50% Average daily gas consumption US/Canada",
+      "service": 4,
+      "level": 2,
+      "units": "Megajoules/day",
+      "value": 6.35
+    }
+  }
+]
