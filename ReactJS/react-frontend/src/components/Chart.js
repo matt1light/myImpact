@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
+import get_rates_by_device_and_time_frame from './ApiRequests'
 
 
 class Chart extends Component{
