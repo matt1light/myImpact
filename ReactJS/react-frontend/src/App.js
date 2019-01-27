@@ -16,7 +16,8 @@ class App extends React.Component {
     super();
     this.state = {
       chartData:{},
-      service: "Trash"
+      service: "Trash",
+      loaded: false
     }
   }
   onRadioBtnClick(rSelected) {
@@ -41,7 +42,7 @@ class App extends React.Component {
     // Ajax calls here
     //const api_call = await fetch();
     //const data = await api_call.json();
-    fetch('http://localhost:8000/rates/?time__gte=2019-01-26T16%3A08%3A22.656938Z&time__lte=2019-01-26T20%3A08%3A22.656938Z&device=&name=&name__in=&name__startswith=')
+    fetch('http://172.30.182.36:8000/rates/?time__gte=2019-01-26T16%3A08%3A22.656938Z&time__lte=2019-01-26T20%3A08%3A22.656938Z&device=&name=&name__in=&name__startswith=')
       .then(results => {
         return results.json()
       }).then(PostData => {
@@ -70,30 +71,43 @@ class App extends React.Component {
             }
           ]
         },
-        service: service
+        service: service,
+        loaded: true
       });
     })
   }
 
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to myImpact </h2>
+    if(this.state.loaded) {
+      return (
+        <div className="App">
+          <div className="App-header">
+            <h2>Welcome to myImpact </h2>
+          </div>
+          <div className="chart">
+            <Chart chartData={this.state.chartData} service={this.state.service} legendPosition="right"/>
+          </div>
+          <div className="device_container">
+            <ButtonGroup>
+              <Button onClick={() => this.onRadioBtnClick("Trash")} active={this.state.rSelected === "Trash"}>Trash</Button>
+              <Button onClick={() => this.onRadioBtnClick("Water")} active={this.state.rSelected === "Water"}>Water</Button>
+              <Button onClick={() => this.onRadioBtnClick("Electricty")} active={this.state.rSelected === "Electricty"}>Electricty</Button>
+              <Button onClick={() => this.onRadioBtnClick("Gas")} active={this.state.rSelected === "Gas"}>Gas</Button>
+            </ButtonGroup>
+          </div>
         </div>
-        <div className="chart">
-          <Chart chartData={this.state.chartData} service={this.state.service} legendPosition="right"/>
-        </div>
-        <div className="device_container">
-          <ButtonGroup>
-            <Button onClick={() => this.onRadioBtnClick("Trash")} active={this.state.rSelected === "Trash"}>Trash</Button>
-            <Button onClick={() => this.onRadioBtnClick("Water")} active={this.state.rSelected === "Water"}>Water</Button>
-            <Button onClick={() => this.onRadioBtnClick("Electricty")} active={this.state.rSelected === "Electricty"}>Electricty</Button>
-            <Button onClick={() => this.onRadioBtnClick("Gas")} active={this.state.rSelected === "Gas"}>Gas</Button>
-          </ButtonGroup>
-        </div>
-      </div>
-    );
+        );
+      }
+      else {
+        return (
+          <div className="App">
+            <div className="App-header">
+              <h2>Welcome to myImpact </h2>
+            </div>
+            <p className="title-container__subtitle"> Content Loading </p>
+          </div>
+        );
+      }
   }
 }
 
