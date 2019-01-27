@@ -16,7 +16,8 @@ class Device(models.Model):
 
 class RawData(models.Model):
     device = models.ForeignKey(Device, related_name = 'raw_datas', on_delete = models.CASCADE)
-    time = models.DateTimeField()
+    dateTime = models.DateTimeField()
+    deviceType = models.TextField()
     data = models.TextField()
 
 class Rate(models.Model):

@@ -12,18 +12,17 @@ class DeviceSerializer(serializers.HyperlinkedModelSerializer):
         model = Device
         fields = ('name', 'deviceId', 'service')
 
-
 class RawDataSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RawData
-        fields = ('device', 'time', 'data')
+        fields = ('device', 'time', 'data', 'date')
 
 class RateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Rate
         fields = ('name', 'units', 'time', 'value')
 
-class GoalRate(serializers.HyperlinkedModelSerializer):
+class GoalRateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = GoalRate
         fields = ('level', 'value', 'service')

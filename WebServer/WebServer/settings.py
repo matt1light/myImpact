@@ -25,7 +25,7 @@ SECRET_KEY = ')(mx-j$5=+o9i#&j0m=z8k4#&vgyyrs@*qy7bnpj99k)y6ix97'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.30.182.36', 'localhost']
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'restAPI.apps.RestapiConfig',
+    'rest_framework',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
