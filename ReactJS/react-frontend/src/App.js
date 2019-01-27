@@ -21,7 +21,8 @@ class App extends React.Component {
     }
   }
   onRadioBtnClick(rSelected) {
-    this.setState({ service: rSelected });
+    this.setState({ service: rSelected});
+    this.getChartData();
   }
 
   componentWillMount(){
@@ -38,7 +39,11 @@ class App extends React.Component {
     const timeArray = PostData.map(
       postDetail => postDetail.time
     )
-    var service = "Trash"
+    var service = this.state.service
+    fetch('http://172.30.182.36:8000/devices/?service=trash')
+      .then(results =>{
+        results.json();
+      })
     // Ajax calls here
     //const api_call = await fetch();
     //const data = await api_call.json();
