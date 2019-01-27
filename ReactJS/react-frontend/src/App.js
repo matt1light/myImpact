@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import PostList from './posts/PostList';
 import './App.css';
 import Chart from './components/Chart';
-import Device from './components/Device';
 import PostData from './data/posts.json';
 import { Button, ButtonGroup} from 'reactstrap';
 import get_rates_by_device_and_time_frame from './components/ApiRequests'
@@ -42,7 +41,6 @@ class App extends React.Component {
     // Ajax calls here
     //const api_call = await fetch();
     //const data = await api_call.json();
-  componentDidMount(){
     fetch('http://localhost:8000/rates/?time__gte=2019-01-26T16%3A08%3A22.656938Z&time__lte=2019-01-26T20%3A08%3A22.656938Z&device=&name=&name__in=&name__startswith=')
       .then(results => {
         return results.json()
