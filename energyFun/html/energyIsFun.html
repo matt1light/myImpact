@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>myImpact Mock Sensor Data</h1>
+    <div class="action">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+      <div>
+        <input type="text" id="trashId" placeholder="Board ID">
+        <input type="text" id="trashValue" placeholder="Value (Kg)">
+      </div>
+      <button id="trash">Add trash!</button>
+    </div>
+
+    <div class="action">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+      <div>
+        <input type="text" id="waterId" placeholder="Board ID">
+        <input type="text" id="waterValue" placeholder="Value (L)">
+      </div>
+      <button id="water">Use Water!</button>
+    </div>
+
+    <div class="action">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      <div>
+        <input type="text" id="electricityId" placeholder="Board ID">
+        <input type="text" id="electricityValue" placeholder="Value (kWh)">
+      </div>
+      <button id="electricity">Use Electricity!</button>
+    </div>
+
+    <div class="action">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+      <div>
+        <input type="text" id="gasId" placeholder="Board ID">
+        <input type="text" id="gasValue" placeholder="Value (MJ)">
+      </div>
+      <button id="gas">Use Gas!</button>
+    </div>
+  </body>
+</html>
