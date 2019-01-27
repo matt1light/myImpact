@@ -6,37 +6,44 @@ Analyzer interface
 
 import abc
 import json
-from models import RawData
-from models import Rate
-
+from .models import RawData
+from .models import Rate
+import sys
+import datetime
+import pdb
 
 class Analyzer(abc.ABC):
 #Abstract class in which services extend
     @abc.abstractmethod
-    def analyze(self):
+    def analyze(self, dataArray):
         pass
 
-class Trash(analyzer):
-    @staticmethod
+class Trash(Analyzer):
     def analyze(self, dataArray):
         rate_object=Rate()
         data_list1=dataArray[0].data.split(" ")
-        data_list2=dataArray[len(dataArray)-1].data.split(" ")
+        data_list2=dataArray[-1].data.split(" ")
         # finding units from arbitrary data point
-        rate_object.units=word_list[len(word_list)-1]
+        rate_object.units=data_list1[len(data_list1)-1]
         #finding rate of change
-        rate_object.value=(float(data_list1[len(data_list1)-2])-float(data_list2[len(data_list2)-2]))/abs(dataArray[len(dataArray-1)].time()-dataArray[0].time())
+        value1 = float(data_list1[-2])
+        value2 = float(data_list2[-2])
+        rise = value2 - value1
+        time1 = dataArray[0].dateTime
+        time2 = dataArray[-1].dateTime
+        deltarun = (time2-time1).days
+        pdb.set_trace()
+        rate_object.value=rise/deltarun
         return rate_object
 
-class Water(analyzer):
-    @staticmethod
+class Water(Analyzer):
     def analyze(self):
+        return
 
-class Heat(analyzer):
-    @staticmethod
+class Heat(Analyzer):
     def analyze(self):
+        return
 
-class Energy(analyzer):
-    @staticmethod
+class Energy(Analyzer):
     def analyze(self):
-
+        return
