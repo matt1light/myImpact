@@ -26,6 +26,7 @@ class Rate(models.Model):
     units = models.CharField(max_length=20)
     time = models.DateTimeField()
     value = models.FloatField()
+    device = models.ForeignKey(Device, related_name='rates', on_delete=models.CASCADE)
 
 class GoalRate(models.Model):
     service = models.ForeignKey(Service, related_name='goal_rates', on_delete=models.CASCADE)
