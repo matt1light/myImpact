@@ -33,7 +33,7 @@ $(document).ready(function(){
   $("#gas").click(function(){
     boardId = $("#gasId").val()
     value = $("#gasValue").val()
-    $.post("test", '{"deviceType": "gas", "boardId": "' + boardId + '", "value": ' + value + ', "unit": "MJ"}',
+    $.post("test", '{"deviceType": "gas", "boardId": "' + boardId + '", "data": {"value": ' + value + ', "unit": "MJ"}}',
     function(data, status){
       console.log("data: " + data)
       console.log("typeof: " + typeof data)
