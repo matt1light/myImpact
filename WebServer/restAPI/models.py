@@ -4,6 +4,9 @@ from django.db import models
 
 #your models here.
 
+class House(models.Model):
+    occupants = models.IntegerField()
+
 class Service(models.Model):
     name = models.TextField()
     analyzer = models.TextField(null=True, default=None)
@@ -13,6 +16,7 @@ class Device(models.Model):
     name = models.TextField()
     boardId = models.TextField()
     service = models.ForeignKey(Service, related_name='devices', on_delete=models.SET_NULL, null=True)
+    house = models.ForeignKey(House, relsated_name='devices', on_delete=models.SET_NULL)
 
 class RawData(models.Model):
     device = models.ForeignKey(Device, related_name='raw_datas', on_delete=models.CASCADE, null=True)
@@ -32,3 +36,4 @@ class GoalRate(models.Model):
     service = models.ForeignKey(Service, related_name='goal_rates', on_delete=models.CASCADE)
     level = models.CharField(max_length=20, default="average")
     value = models.FloatField()
+    untis = models.CharField(max_length=20)
