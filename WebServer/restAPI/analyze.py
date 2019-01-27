@@ -9,7 +9,7 @@ import json
 from .models import RawData
 from .models import Rate
 import sys
-import datetime
+from datetime import datetime
 import pdb
 
 
@@ -29,6 +29,9 @@ class Trash(Analyzer):
         rate_object.units = data_list1[len(data_list1) - 1] + "/day"
         # finding device ID from arbitary point
         rate_object.device = dataArray[0].device
+        # time instance variable instantiation
+        time = dataArray[0].dateTime.strftime("%Y-%m-%d")
+        rate_object.time = datetime.strptime(time, "%Y-%m-%d")
         # finding rate of change
         value1 = float(data_list1[-2])
         value2 = float(data_list2[-2])
@@ -48,6 +51,9 @@ class Water(Analyzer):
         rate_object.units = data_list1[-1]
         # finding device ID from arbitary point
         rate_object.device = dataArray[0].device
+        # time instance variable instantiation
+        time = dataArray[0].dateTime.strftime("%Y-%m-%d")
+        rate_object.time = datetime.strptime(time, "%Y-%m-%d")
         # finding L of water per day
         rate_object.value = 0.0
         for i in range(len(dataArray)):
@@ -61,6 +67,9 @@ class Gas(Analyzer):
         rate_object = Rate()
         # finding device ID from arbitary point
         rate_object.device = dataArray[0].device
+        # time instance variable instantiation
+        time = dataArray[0].dateTime.strftime("%Y-%m-%d")
+        rate_object.time = datetime.strptime(time, "%Y-%m-%d")
         # finding MJ of Gas per day
         rate_object.value = 0.0
         for i in range(len(dataArray)):
@@ -74,8 +83,13 @@ class Gas(Analyzer):
 class Electricity(Analyzer):
     def analyze(self, dataArray):
         rate_object = Rate()
+        pdb.set_trace()
         # finding device ID from arbitary point
         rate_object.device = dataArray[0].device
+        # time instance variable instantiation
+        time=dataArray[0].dateTime.strftime("%Y-%m-%d")
+        rate_object.time=datetime.strptime(time, "%Y-%m-%d")
+        print(rate_ob)
         # finding kWh of Electricity per day
         rate_object.value = 0.0
         for i in range(len(dataArray)):
