@@ -1,0 +1,110 @@
+[
+    {
+      "model": "restAPI.device",
+      "pk": 1,
+      "fields": {
+        "service": 1,
+        "boardId": "1",
+        "house": null
+      }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 1,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T16:08:22.656938Z",
+          "value": "1",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 2,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T17:08:22.656938Z",
+          "value": "2",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 3,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T18:08:22.656938Z",
+          "value": "3",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 4,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T19:08:22.656938Z",
+          "value": "4",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 5,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T20:08:22.656938Z",
+          "value": "5",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 6,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T21:08:22.656938Z",
+          "value": "6",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 7,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T22:08:22.656938Z",
+          "value": "7",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 8,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-26T23:08:22.656938Z",
+          "value": "3",
+          "device": 1
+        }
+    },
+    {
+        "model": "restAPI.rate",
+        "pk": 9,
+        "fields": {
+          "name": "trash",
+          "units": "kg/h",
+          "time": "2019-01-27T0:08:22.656938Z",
+          "value": "1",
+          "device": 1
+        }
+    }
+]
