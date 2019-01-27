@@ -30,7 +30,6 @@ class App extends React.Component {
   }
 
   getChartData(){
-
     const valueArray = PostData.map(
       postDetail =>  postDetail.value
     )
@@ -40,14 +39,20 @@ class App extends React.Component {
       postDetail => postDetail.time
     )
     var service = this.state.service
-    fetch('http://172.30.182.36:8000/devices/?service=trash')
-      .then(results =>{
-        results.json();
-      })
-    // Ajax calls here
-    //const api_call = await fetch();
-    //const data = await api_call.json();
-    fetch('http://172.30.182.36:8000/rates/?time__gte=2019-01-26T16%3A08%3A22.656938Z&time__lte=2019-01-26T20%3A08%3A22.656938Z&device=&name=&name__in=&name__startswith=')
+    let deviceId 
+    switch(this.state.service){
+      case "Trash":
+        deviceId = 1
+      case "Water":
+        deviceId = 2
+      case "Gas":
+        deviceId = 3
+      case "Electricity":
+        deviceId = 4
+      default:
+        deviceId = 1
+    }
+    fetch('http://172.30.182.36:8000/rates/?time__gte=2019-01-20T16%3A08%3A22.656938Z&time__lte=2019-01-27T20%3A08%3A22.656938Z&device=' + 1 + '&name=&name__in=&name__startswith=')
       .then(results => {
         return results.json()
       }).then(PostData => {
