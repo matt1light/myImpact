@@ -1,0 +1,19 @@
+button {
+  margin-left: 5px;
+  background-color: #FFFFFF;
+  border: 2px solid black;
+  width: 150px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.action{
+  margin: 10px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
