@@ -14,7 +14,7 @@ class Chart extends Component{
     displayTitle:true,
     displayLegend: true,
     legendPosition:'right',
-    location:'City'
+    service:'Service'
   }
 
   render(){
@@ -24,14 +24,14 @@ class Chart extends Component{
         <Line
           data={this.state.chartData}
           options={{
-            title:{
-              display:this.props.displayTitle,
-              text:'Your use of '+this.props.location,
-              fontSize:25
+            title: {
+              display: this.props.displayTitle,
+              text: 'Your use of '+ this.props.service,
+              fontSize: 25
             },
-            legend:{
-              display:this.props.displayLegend,
-              position:this.props.legendPosition
+            legend: {
+              display: this.props.displayLegend,
+              position: this.props.legendPosition
             }
           }}
         />
