@@ -59,7 +59,6 @@ class Water(Analyzer):
 class Gas(Analyzer):
     def analyze(self, dataArray):
         rate_object = Rate()
-        pdb.set_trace()
         # finding device ID from arbitary point
         rate_object.device = dataArray[0].device
         # finding MJ of Gas per day
@@ -75,7 +74,6 @@ class Gas(Analyzer):
 class Electricity(Analyzer):
     def analyze(self, dataArray):
         rate_object = Rate()
-        pdb.set_trace()
         # finding device ID from arbitary point
         rate_object.device = dataArray[0].device
         # finding kWh of Electricity per day
