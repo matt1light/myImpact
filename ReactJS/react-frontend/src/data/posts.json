@@ -4,21 +4,21 @@
 				"units": "kg/h",
         "boardId": "1",
         "time": "2019-01-26T16:08:22.656938Z",
-        "value": "1"
+        "value": "1.23"
     },
     {
 				"name": "trash",
 				"units": "kg/h",
         "boardId": "1",
         "time": "2019-01-26T17:08:22.656938Z",
-        "value": "2"
+        "value": "2.1"
     },
     {
 				"name": "trash",
 				"units": "kg/h",
         "boardId": "1",
         "time": "2019-01-26T18:08:22.656938Z",
-        "value": "3"
+        "value": "4.52"
     },
     {
 				"name": "trash",
@@ -46,7 +46,7 @@
 				"units": "kg/h",
         "boardId": "1",
         "time": "2019-01-26T22:08:22.656938Z",
-        "value": "7"
+        "value": "2.1"
     },
     {
 				"name": "trash",
@@ -60,6 +60,6 @@
 				"units": "kg/h",
         "boardId": "1",
         "time": "2019-01-27T0:08:22.656938Z",
-        "value": "1"
+        "value": "1.8"
     }
 ]
