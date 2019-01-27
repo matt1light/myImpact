@@ -1,6 +1,6 @@
 from django.test import TestCase
 from .models import RawData, Rate
-from analyzer import trash
+from .analyze import Trash
 import datetime
 
 # Create your tests here.
@@ -10,10 +10,10 @@ class AnalyzerTests(TestCase):
         today=datetime.datetime.now()
         self.raw_data_array = []
         for x in range(0, 10):
-            data = "{\d\d " + str(x) +"kg }"
+            data = "{\d\d " + str(x) +" kg}"
             self.raw_data_array.append(
                 RawData(
-                    dateTime= today.replace(day=today.day+x),
+                    dateTime= today.replace(day=today.day-10 + x),
                     deviceType= "trash",
                     data = data,
                     boardId= "X1D54"))
