@@ -20,10 +20,12 @@ class Chart extends Component{
   render(){
     return (
       <div className="chart">
-
         <Line
+          width={800}
+          height={300}
           data={this.state.chartData}
           options={{
+            maintainAspectRatio: false,
             title: {
               display: this.props.displayTitle,
               text: 'Your use of '+ this.props.service,
@@ -32,7 +34,8 @@ class Chart extends Component{
             legend: {
               display: this.props.displayLegend,
               position: this.props.legendPosition
-            }
+            },
+            responsive: true
           }}
         />
       </div>
