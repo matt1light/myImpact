@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.urls import path
-from restAPI.views import DeviceViewSet, RateViewSet, RawDataViewSet, ServiceViewSet
+from restAPI.views import DeviceViewSet, RateViewSet, ServiceViewSet, RawDataViewSet
 from django.contrib import admin
 from rest_framework import routers
 
