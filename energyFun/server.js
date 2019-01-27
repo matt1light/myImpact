@@ -84,8 +84,8 @@ http.createServer(function(request, response) {
         })
       }
     })
-  }).listen(3000)
+  }).listen(8080)
 
-console.log("Server Running at PORT 3000  CNTL-C to quit")
+console.log("Server Running at PORT 8080  CNTL-C to quit")
 console.log("To Test:")
-console.log("http://localhost:3000/energyIsFun.html")
+console.log("http://localhost:8080/energyIsFun.html")
