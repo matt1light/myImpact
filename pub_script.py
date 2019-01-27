@@ -1,3 +1,5 @@
 import paho.mqtt.publish as publish
-print('Sending {"test": 1} to topic testing')
-publish.single("testing", '{"test": 1}', hostname="localhost")
+
+data = '{"deviceType": "trash", "boardId": "1A2B3C", "data": " /d/d 12.32 kg"}'
+print('Sending ' + data + ' to topic rawData')
+publish.single("rawData", data, hostname="localhost")
