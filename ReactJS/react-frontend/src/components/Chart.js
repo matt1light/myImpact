@@ -14,25 +14,28 @@ class Chart extends Component{
     displayTitle:true,
     displayLegend: true,
     legendPosition:'right',
-    location:'City'
+    service:'Service'
   }
 
   render(){
     return (
       <div className="chart">
-
         <Line
+          width={800}
+          height={300}
           data={this.state.chartData}
           options={{
-            title:{
-              display:this.props.displayTitle,
-              text:'Your use of '+this.props.location,
-              fontSize:25
+            maintainAspectRatio: false,
+            title: {
+              display: this.props.displayTitle,
+              text: 'Your use of '+ this.props.service,
+              fontSize: 25
             },
-            legend:{
-              display:this.props.displayLegend,
-              position:this.props.legendPosition
-            }
+            legend: {
+              display: this.props.displayLegend,
+              position: this.props.legendPosition
+            },
+            responsive: true
           }}
         />
       </div>
