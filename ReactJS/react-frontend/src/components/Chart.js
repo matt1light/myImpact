@@ -21,8 +21,8 @@ class Chart extends Component{
     return (
       <div className="chart">
         <Line
-          width={800}
-          height={300}
+          width={100}
+          height={500}
           data={this.state.chartData}
           options={{
             maintainAspectRatio: false,

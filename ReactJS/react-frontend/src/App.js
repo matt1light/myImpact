@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import PostList from './posts/PostList';
 import './App.css';
 import Chart from './components/Chart';
-import Device from './components/Device';
+import logo from './impactlogo.svg'; 
 import PostData from './data/posts.json';
 import { Button, ButtonGroup} from 'reactstrap';
+
 
 class App extends React.Component {
   constructor(){
@@ -45,7 +45,7 @@ class App extends React.Component {
             {
               label: name,
               data: valueArray,
-              backgroundColor: ['rgba(49, 198, 83, 0.5)']
+              backgroundColor: ['rgb(92,230,108, 0.6)']
             }
           ]
         },
@@ -55,22 +55,55 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to myImpact </h2>
-        </div>
-        <div className="chart">
-          <Chart chartData={this.state.chartData} service={this.state.service} legendPosition="right"/>
-        </div>
-        <div className="device_container">
-          <ButtonGroup>
-            <Button onClick={() => this.onRadioBtnClick("Trash")} active={this.state.rSelected === "Trash"}>Trash</Button>
-            <Button onClick={() => this.onRadioBtnClick("Water")} active={this.state.rSelected === "Water"}>Water</Button>
-            <Button onClick={() => this.onRadioBtnClick("Electricty")} active={this.state.rSelected === "Electricty"}>Electricty</Button>
-            <Button onClick={() => this.onRadioBtnClick("Gas")} active={this.state.rSelected === "Gas"}>Gas</Button>
-          </ButtonGroup>
-        </div>
-      </div>
+      <div>
+        <div className="wrapper">
+          <div>
+            <div className="container">
+              <div className="logo">
+              <h1>
+                    <img src= {logo} alt="my impact" />
+              </h1>
+              </div>
+              <div>
+              <h2>
+                Welcome back Carl,
+              </h2>
+              <p>
+                  Here's how you're doing
+              </p>
+                </div>
+              <div className="chart">
+                  <Chart chartData={this.state.chartData} service={this.state.service} legendPosition="disabled"/>
+              </div>
+              <div className="device_container">
+            <ButtonGroup>
+              <Button onClick={() => this.onRadioBtnClick("Waste")} active={this.state.rSelected === "Waste"}>Waste</Button>
+              <Button onClick={() => this.onRadioBtnClick("Water")} active={this.state.rSelected === "Water"}>Water</Button>
+              <Button onClick={() => this.onRadioBtnClick("Electricty")} active={this.state.rSelected === "Electricty"}>Electricty</Button>
+              <Button onClick={() => this.onRadioBtnClick("Gas")} active={this.state.rSelected === "Gas"}>Gas</Button>
+            </ButtonGroup>
+                  </div>
+                  <div className="chart">
+                  <Chart chartData={this.state.chartData} service={this.state.service} legendPosition="disabled"/>
+              </div>
+              
+                </div>
+              </div>
+              
+            </div>
+            <footer>
+
+            </footer>
+          </div>
+      
+    /*<div className=".container"    
+    <div>
+        
+          
+          
+    </div>
+          */
+      
     );
   }
 }

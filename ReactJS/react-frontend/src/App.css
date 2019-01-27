@@ -1,43 +1,71 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 body {
-  font-family: "Open Sans", serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .wrapper {
-  background: linear-gradient(to right, #e67e22, #e74c3c);
-  height: 100vh;
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+h1 {
+  color: white;
+  align-items: center;
+}
+
+footer{
+  border-bottom: 5px solid #5ce66c;
+}
+
+h2{
+
+  font-size: 25pt;
+  font-style: bold;
+
+}
+
+p {
+
+  font-size: 15pt;
+
+}
+
+
+.logo {
+  margin: 20vh;
+  
+  width: 100vh;
+
+}
+
 
 .main {
-  height: 90vh;
+  height: 100vh;
   background: #fff;
   box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
-.title-container {
-  height: 90vh;
-  background: url("img/bg.jpg") center center no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #000;
-}
 
 .title-container__title {
   font-size: 50px;
   letter-spacing: 2px;
   line-height: 1.3;
   font-family: 'Roboto Slab', serif;
+}
+
+.device_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh;
 }
 
 .title-container__subtitle {
