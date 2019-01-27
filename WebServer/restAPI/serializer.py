@@ -1,7 +1,6 @@
 from .models import Rate, RawData, GoalRate, Device, Service
 from rest_framework import serializers
 
-
 class ServiceSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Service

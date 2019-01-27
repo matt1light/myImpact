@@ -1,7 +1,23 @@
 from .models import Service, Device, RawData, Rate, GoalRate
 from .serializer import DeviceSerializer, ServiceSerializer, RawDataSerializer, RateSerializer, GoalRateSerializer
 from rest_framework import viewsets, generics
-import pdb
+from django_filters import rest_framework as filters
+
+class RateFilter(filters.FilterSet):
+    class Meta:
+        model = Rate
+        fields = {
+            'name': ['exact', 'in', 'startswith'],
+            'time': ['gte', 'lte'],
+            'device': ['exact'],
+        }
+
+class RawDataFilter(filters.FilterSet):
+    class Meta:
+        model = RawData
+        fields = {
+            'dateTime': ['gte', 'lte'],
+        }
 
 # Create your views here.
 
@@ -16,6 +32,7 @@ class ServiceViewSet(viewsets.ModelViewSet):
 class RawDataViewSet(viewsets.ModelViewSet):
     queryset = RawData.objects.all()
     serializer_class = RawDataSerializer
+    filterset_class = RawDataFilter
 
     # def perform_create(self, serializer):
     #     pdb.set_trace()
@@ -36,6 +53,7 @@ class RawDataViewSet(viewsets.ModelViewSet):
 class RateViewSet(viewsets.ModelViewSet):
     queryset = Rate.objects.all()
     serializer_class = RateSerializer
+    filterset_class = RateFilter
 
 class GoalRateViewSet(viewsets.ModelViewSet):
     queryset = GoalRate.objects.all()
