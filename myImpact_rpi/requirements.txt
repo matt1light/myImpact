@@ -6,5 +6,5 @@ paho-mqtt==1.4.0
 python-dotenv==0.10.1
 pytz==2018.9
 requests==2.21.0
-urllib3==1.24.1
+urllib3==1.26.5
 zope.interface==4.6.0
